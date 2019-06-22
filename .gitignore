@@ -1,2 +1,4 @@
 node_modules
 .idea
+src/smartcontracts/deployment
+src/smartcontracts/constants

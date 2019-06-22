@@ -10,6 +10,11 @@ contract BikeToWork {
 
     MOB mobTokenContract;
 
+    enum State {
+        ACTIVE,
+        FINISHED
+    }
+
     struct SponsoredChallenge {
         uint256 id;
         uint256 rewardPerDistance;
@@ -22,9 +27,14 @@ contract BikeToWork {
         State state;
     }
 
-    enum State {
-        ACTIVE,
-        FINISHED
+    struct EffectiveChallenge {
+        uint256 sponsoredChallengeId;  // the challenge id which the challenge belongs to
+        uint256 startStationId;
+        uint256 endStationId;
+        uint256 distanceInKm;
+
+        uint256[] startPointCheckinTimes;
+        uint256[] endPointCheckinTimes;
     }
 
     struct SponsoredCheckpoint {
@@ -34,19 +44,14 @@ contract BikeToWork {
         bytes32 checkpointHash;
         State state;
     }
-
-    struct Challenge {
-        bytes32 startPoint;
-        bytes32 endPoint;
-        uint32 distanceInKm;
-
-        bytes32[] checkIns;
-    }
     
     mapping(uint256 => SponsoredChallenge) sponsoredChallenges;
     uint256[] challenges;
     mapping(uint256 => SponsoredCheckpoint) sponsoredCheckpoints;
     uint256[] checkpoints;
+
+    mapping(uint256 => EffectiveChallenge) effectiveChallenge;
+    uint256[] effChallenges;
 
     function createSponsoredChallenge (
         address _from,
@@ -76,6 +81,10 @@ contract BikeToWork {
         challenge.state = State.ACTIVE;
 
         challenges.push(challenge.id);
+    }
+
+    function startChallenge (uint256 _startStationId, bytes32 _startStationSecretHash, uint256 _endStationId) {
+
     }
 
     function createSponsoredCheckpoint (address _from, uint256 _value, uint256 _rewardPerCheckin, uint256 _amountOfRewards, bytes32 _checkpointSecret) public {

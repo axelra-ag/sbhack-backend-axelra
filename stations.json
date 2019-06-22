@@ -49,15 +49,8 @@
     "secretKey": "Bwb6P8zJwSVKtQBba"
   },
   {
-    "id": 7,
-    "name": "Station 7",
-    "coordinates": [47.366528, 8.540304],
-    "availableBikes": 13,
-    "secretKey": "bXsfTMCDknG7aaPyV"
-  },
-  {
     "id": 8,
-    "name": "Station 8",
+    "name": "Wüest Partner AG",
     "coordinates": [47.334860, 8.526954],
     "availableBikes": 2,
     "secretKey": "dA3Fhh2pHUTaC4bg4"
@@ -84,13 +77,6 @@
     "secretKey": "Vt8FJAqz6HR9gbuzw"
   },
   {
-    "id": 12,
-    "name": "Migros Fitnesspark Stockerhof",
-    "coordinates": [47.3653967,8.5341538],
-    "availableBikes": 6,
-    "secretKey": "BLLaY6cQCBKauHd74"
-  },
-  {
     "id": 13,
     "name": "Descartes Finance AG",
     "coordinates": [47.3684523,8.5343024],
@@ -100,35 +86,14 @@
   {
     "id": 14,
     "name": "Luxor Fitness",
-    "coordinates": [47.3683362,8.5367521],
+    "coordinates": [47.361270, 8.517356],
     "availableBikes": 41,
     "secretKey": "uZrN3YVtEpyKqYvCn"
   },
   {
-    "id": 15,
-    "name": "Wüest Partner AG",
-    "coordinates": [47.3687059,8.5377828],
-    "availableBikes": 7,
-    "secretKey": "2ksx6SC7U7Huyc2eg"
-  },
-  {
-    "id": 16,
-    "name": "Panzernashorn",
-    "coordinates": [47.3684239,8.538901],
-    "availableBikes": 2,
-    "secretKey": "xqk57NK2wfhqBzrPX"
-  },
-  {
-    "id": 17,
-    "name": "Metropol",
-    "coordinates": [47.3676114,8.5405709],
-    "availableBikes": 11,
-    "secretKey": "ZFUYizJT+/Gte12LbHq1dT1RTn"
-  },
-  {
     "id": 18,
     "name": "Laternengasse",
-    "coordinates": [47.3697731,8.5431452],
+    "coordinates": [47.376211, 8.543497],
     "availableBikes": 13,
     "secretKey": "XT5UvUQFnJ9VHvufJ"
   },
@@ -156,29 +121,29 @@
   {
     "id": 22,
     "name": "Münsterhof",
-    "coordinates": [47.370039, 8.540529],
+    "coordinates": [47.358684, 8.553687],
     "availableBikes": 7,
     "secretKey": "pKfQ6c44ft9Fassut"
   },
   {
     "id": 23,
-    "name": "Stadthausquai",
-    "coordinates": [47.369454, 8.541806],
-    "availableBikes": 2,
-    "secretKey": "Ut48d3q6pMepaE8Ey"
+    "name": "California House",
+    "coordinates": [47.364449,8.5601379],
+    "availableBikes": 16,
+    "secretKey": "CULUqMy5KBkf78tnm"
   },
   {
     "id": 24,
-    "name": "Tiefenhöfe",
-    "coordinates": [47.368457, 8.539081],
-    "availableBikes": 11,
-    "secretKey": "GShJeNy5WWwZeLhJZ"
+    "name": "Hallenbad",
+    "coordinates": [47.3728555,8.5600658],
+    "availableBikes": 7,
+    "secretKey": "8TLPUmngw57Z5ZYRS"
   },
   {
     "id": 25,
-    "name": "Starbucks",
-    "coordinates": [47.3678931,8.5353509],
-    "availableBikes": 6,
-    "secretKey": "J5Ztnu62AzVJVnPXf"
+    "name": "Yalla",
+    "coordinates": [47.3698354,8.518173],
+    "availableBikes": 16,
+    "secretKey": "xYbNRs5FuZVFd8Mnu"
   }
 ]

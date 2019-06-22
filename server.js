@@ -6,7 +6,7 @@ const fs = require("fs");
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.PORT ? process.env.PORT : 6000;
+const port = 6000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -4,6 +4,7 @@ const googleMapsClient = require('@google/maps').createClient({
 });
 const googleGeometry = require('spherical-geometry-js');
 const Stations = require('../stations');
+const Checkpoints = require('../checkpoints');
 
 const mapRouter = require("express").Router();
 
@@ -17,7 +18,7 @@ defaultResponse = (req, res) => {
   };
 };
 
-mapRouter.post("/get-directions", function(req, res, next) {
+mapRouter.post("/get-directions", (req, res) => {
   const data = req.body;
   // const data = {
   //   start: 'Morgentalstrasse 67 8038 Zürich',
@@ -27,16 +28,27 @@ mapRouter.post("/get-directions", function(req, res, next) {
   return MapController.getDistance(data, defaultResponse(req, res));
 });
 
-mapRouter.get('/get-stations', function (req, res) {
+mapRouter.get('/get-stations', (req, res) => {
   return MapController.getStations(defaultResponse(req, res));
 });
 
-mapRouter.post("/get-closest-station", function(req, res, next) {
+mapRouter.post("/get-closest-station", (req, res) => {
   const {address} = req.body;
   // const address = 'Morgentalstrasse 67 8038 Zürich';
 
   return MapController.getStation(address, defaultResponse(req, res));
 });
+
+mapRouter.get('/get-checkpoints', (req, res) => {
+  return MapController.getCheckpoints(defaultResponse(req, res));
+});
+
+mapRouter.post('/achieve-point', (req, res) => {
+  const {coordinates, checkPoint} = req.body;
+
+  return MapController.checkDistanseToCheckpoint(coordinates, checkPoint, defaultResponse(req, res));
+});
+
 
 const MapController = {
 
@@ -85,51 +97,80 @@ const MapController = {
     } catch (err) {
       callback(err);
     }
+  },
 
-    function find_closest_marker( lat, lng ) {
-      return new Promise(resolve => {
-        var R = 6371; // radius of earth in km
-        var distances = [];
-        var closest = -1;
-        for( let i=0; i<Stations.length; i++ ) {
-          var mlat = Stations[i].coordinates[0];
-          var mlng = Stations[i].coordinates[1];
-          var dLat  = rad(mlat - lat);
-          var dLong = rad(mlng - lng);
-          var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-              Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
-          var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-          var d = R * c;
-          distances[i] = d;
-          if ( closest === -1 || d < distances[closest] ) {
-            closest = i;
-          }
-        }
-
-        resolve(Stations[closest]);
-      });
-
-      function rad(x) {return x*Math.PI/180;}
+  getCheckpoints: async (callback) => {
+    if(Checkpoints) {
+      return callback(null, {
+        success: true,
+        result: Checkpoints
+      })
     }
 
-    function find_closest_marker2(lat, lng, radius = 50) {
-      return new Promise(resolve => {
-        let markers_distances = [];
-        for (let i = 0; i < Stations.length; i++) {
-          let distance = googleGeometry.computeDistanceBetween(Stations[i].coordinates, [lat, lng], radius);
-          markers_distances[i] = {
-            distance: distance,
-            marker: Stations[i]
-          }
-        }
-        let closest_markers = markers_distances.sort((a, b) => {return a.distance-b.distance});
+    return  callback('No stations');
+  },
 
-        resolve(closest_markers[0]);
-      });
+  checkDistanseToCheckpoint: async (coordinates, checkpointID, callback) => {
+    const checkpoint = Checkpoints.find(x => x.id == checkpointID);
+    let farAway = await googleGeometry.computeDistanceBetween(
+        googleGeometry.convertLatLng(checkpoint.coordinates),
+        googleGeometry.convertLatLng(coordinates)
+    );
+
+    if(parseInt(farAway) <= 20) {
+      return callback(null, {
+        success: true,
+        data: {
+          checkpoint,
+          hash: Buffer.from(checkpoint.id+'-'+new Date()).toString('base64')
+        }
+      })
+    } else {
+      return callback('You are far away to the check point. Please come closer.')
     }
   }
-
 };
 
 module.exports = mapRouter;
 
+function find_closest_marker( lat, lng ) {
+  return new Promise(resolve => {
+    var R = 6371; // radius of earth in km
+    var distances = [];
+    var closest = -1;
+    for( let i=0; i<Stations.length; i++ ) {
+      var mlat = Stations[i].coordinates[0];
+      var mlng = Stations[i].coordinates[1];
+      var dLat  = rad(mlat - lat);
+      var dLong = rad(mlng - lng);
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+          Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      var d = R * c;
+      distances[i] = d;
+      if ( closest === -1 || d < distances[closest] ) {
+        closest = i;
+      }
+    }
+
+    resolve(Stations[closest]);
+  });
+
+  function rad(x) {return x*Math.PI/180;}
+}
+
+function find_closest_marker2(lat, lng) {
+  return new Promise(resolve => {
+    let markers_distances = [];
+    for (let i = 0; i < Stations.length; i++) {
+      let distance = googleGeometry.computeDistanceBetween(Stations[i].coordinates, [lat, lng]);
+      markers_distances[i] = {
+        distance: distance,
+        marker: Stations[i]
+      }
+    }
+    let closest_markers = markers_distances.sort((a, b) => {return a.distance-b.distance});
+
+    resolve(closest_markers[0]);
+  });
+}

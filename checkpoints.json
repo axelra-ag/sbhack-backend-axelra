@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "name": "Checkpoint 0",
+    "sponsor": "",
+    "coordinates": [47.3821685,8.50317]
+  },
+  {
+    "id": 1,
+    "name": "Checkpoint 1",
+    "sponsor": "",
+    "coordinates": [47.3675919,8.4948336]
+  },
+  {
+    "id": 2,
+    "name": "Checkpoint 2",
+    "sponsor": "",
+    "coordinates": [47.365564, 8.526930]
+  },
+  {
+    "id": 3,
+    "name": "Checkpoint 3",
+    "sponsor": "",
+    "coordinates": [47.371326, 8.536112]
+  },
+  {
+    "id": 4,
+    "name": "Checkpoint 4",
+    "sponsor": "",
+    "coordinates": [47.378797, 8.548288]
+  },
+  {
+    "id": 5,
+    "name": "Checkpoint 5",
+    "sponsor": "",
+    "coordinates": [47.386657, 8.534532]
+  }
+]

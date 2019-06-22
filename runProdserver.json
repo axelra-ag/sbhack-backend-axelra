@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name":  "axelra-backend",
+      "script": "server.js",
+      "cwd": "./",
+      "max_memory_restart": "350M",
+      "watch": false,
+      "ignore_watch":       [
+        "./server/node_modules"
+      ]
+    }
+  ]
+}

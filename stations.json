@@ -61,5 +61,19 @@
     "coordinates": [47.334860, 8.526954],
     "availableBikes": 2,
     "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+  },
+  {
+    "id": 9,
+    "name": "Trust Square AG",
+    "coordinates": [47.367497,8.5398021],
+    "availableBikes": 99,
+    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+  },
+  {
+    "id": 10,
+    "name": "Naglerwiesenstrasse",
+    "coordinates": [47.4129885,8.4815776],
+    "availableBikes": 1,
+    "secretKey": "ZFUYizJT+/Gte12LbHq1dT1RTn"
   }
 ]

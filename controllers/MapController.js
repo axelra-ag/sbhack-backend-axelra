@@ -40,7 +40,6 @@ const MapController = {
   getStation: async (address, callback) => {
     try {
       let myCoordinates = await googleMapsClient.geocode({address}).asPromise();
-
       if(myCoordinates.json.results.length) {
         let closestStation = await find_closest_marker(myCoordinates.json.results[0].geometry.location);
 
@@ -106,7 +105,7 @@ const MapController = {
 
 module.exports = MapController;
 
-function find_closest_marker( lat, lng ) {
+function find_closest_marker( coordinates ) {
   return new Promise(resolve => {
     var R = 6371; // radius of earth in km
     var distances = [];
@@ -114,10 +113,11 @@ function find_closest_marker( lat, lng ) {
     for( let i=0; i<Stations.length; i++ ) {
       var mlat = Stations[i].coordinates[0];
       var mlng = Stations[i].coordinates[1];
-      var dLat  = rad(mlat - lat);
-      var dLong = rad(mlng - lng);
+      var dLat  = rad(mlat - coordinates.lat);
+      var dLong = rad(mlng - coordinates.lng);
+
       var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-          Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+          Math.cos(rad(coordinates.lat)) * Math.cos(rad(coordinates.lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
       var d = R * c;
       distances[i] = d;
@@ -132,11 +132,15 @@ function find_closest_marker( lat, lng ) {
   function rad(x) {return x*Math.PI/180;}
 }
 
-function find_closest_marker2(lat, lng) {
+function find_closest_marker2(coordinates) {
   return new Promise(resolve => {
     let markers_distances = [];
     for (let i = 0; i < Stations.length; i++) {
-      let distance = googleGeometry.computeDistanceBetween(Stations[i].coordinates, [lat, lng]);
+      let distance = googleGeometry.computeDistanceBetween(
+          googleGeometry.convertLatLng(Stations[i].coordinates),
+          googleGeometry.convertLatLng(coordinates)
+      );
+
       markers_distances[i] = {
         distance: distance,
         marker: Stations[i]

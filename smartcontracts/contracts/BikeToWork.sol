@@ -150,7 +150,7 @@ contract BikeToWork {
         checkpoint.id = id;
         checkpoint.rewardPerCheckin = _rewardPerCheckin;
         checkpoint.amountOfRewards = _amountOfRewards;
-        checkpoint.checkpointHash = keccak256(abi.encode(_checkpointSecret));
+        checkpoint.checkpointHash = _checkpointSecret;
         checkpoint.state = State.ACTIVE;
 
         checkpoints.push(checkpoint.id);

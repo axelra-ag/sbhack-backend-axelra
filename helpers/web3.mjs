@@ -11,7 +11,15 @@ const getWeb3 = () => {
 
 const getBackendProvider = () => {
 
-  web3Provider = new Web3.providers.WebsocketProvider('ws://127.0.0.1:7545');
+  if (process.env.ETH_NETWORK === 'ganache') {
+    web3Provider = new Web3.providers.WebsocketProvider('ws://127.0.0.1:7545');
+  }
+  else if (process.env.ETH_NETWORK === 'kovan') {
+    web3Provider = new Web3.providers.WebsocketProvider('wss://kovan.infura.io/ws/v3/344e9e84c0804cd5a15f4dd4b9b49a1e');
+  }
+  else {
+    console.error('Ethereum network ' + process.env.ETH_NETWORK + ' couldn\'t be found');
+  }
 
   web3Provider.on('connect', (e) => {
     console.log('Web3 Provider connected to ' + web3.currentProvider.connection.url);

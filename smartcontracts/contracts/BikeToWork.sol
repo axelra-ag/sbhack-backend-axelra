@@ -65,12 +65,16 @@ contract BikeToWork {
     mapping(uint256 => Ride) rides;
     uint256[] rideIds;
 
+
+    event RideStarted (uint256 rideId, address rider, uint256 startStationId);
     function startRide (uint256 _startStationId, bytes32 _startStationSecretHash) public {
         require(stations[_startStationId].secretHash == _startStationSecretHash, "secret is not correct");
         uint256 id = rideIds.length;
         rides[id].rideId = id;
         rides[id].startStationId = _startStationId;
         rides[id].rider = msg.sender;
+
+        emit RideStarted(id, msg.sender, _startStationId);
     }
 
     function startRide (uint256 _startStationId, bytes32 _startStationSecretHash, uint256 _endStationId) public {
@@ -82,19 +86,35 @@ contract BikeToWork {
         rides[id].endStationId = _endStationId;
     }
 
+    event RideEnded (uint256 rideId, address rider, uint256 startStationId, uint256 endStationId, uint256 reward, uint256 distance);
     function endRide (uint256 _rideId, uint256 _endStationId, bytes32 _endStationSecretHash) public {
         require(stations[_endStationId].secretHash == _endStationSecretHash, "secret is not correct");
-        require(rides[_rideId].rider == msg.sender);
-        rides[_rideId].endStationId = _endStationId;
+
+        Ride memory ride = rides[_rideId];
+
+        require(ride.rider == msg.sender);
+        ride.endStationId = _endStationId;
         // transfer tokens to user
-        require(mobTokenContract.transfer(msg.sender, SafeMath.mul(rewardPerDistance, distances[rides[_rideId].startStationId][rides[_rideId].endStationId])));
+        uint256 distance = distances[ride.startStationId][ride.endStationId];
+        uint256 reward = SafeMath.mul(rewardPerDistance, distance);
+        require(mobTokenContract.transfer(msg.sender, reward));
+
+        emit RideEnded(_rideId, msg.sender, ride.startStationId, ride.endStationId, reward, distance);
+
     }
 
     function endRide (uint256 _rideId, bytes32 _endStationSecretHash) public {
-        require(stations[rides[_rideId].endStationId].secretHash == _endStationSecretHash, "secret is not correct");
-        require(rides[_rideId].rider == msg.sender);
+        Ride memory ride = rides[_rideId];
+
+        require(stations[ride.endStationId].secretHash == _endStationSecretHash, "secret is not correct");
+
+        require(ride.rider == msg.sender);
         // transfer tokens to user
-        require(mobTokenContract.transfer(msg.sender, SafeMath.mul(rewardPerDistance, distances[rides[_rideId].startStationId][rides[_rideId].endStationId])));
+        uint256 distance = distances[ride.startStationId][ride.endStationId];
+        uint256 reward = SafeMath.mul(rewardPerDistance, distance);
+        require(mobTokenContract.transfer(msg.sender, reward));
+
+        emit RideEnded(_rideId, msg.sender, ride.startStationId, ride.endStationId, reward, distance);
     }
 
 

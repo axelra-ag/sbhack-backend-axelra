@@ -117,6 +117,8 @@ const MapController = {
         googleGeometry.convertLatLng(coordinates)
     );
 
+    // To encode string run this -> Buffer.from('encoded string', 'base64').toString();
+
     if(parseInt(farAway) <= 20) {
       return callback(null, {
         success: true,

@@ -2,37 +2,61 @@
   {
     "id": 0,
     "name": "Checkpoint 0",
-    "sponsor": "",
+    "sponsor": {
+      "name": "MODUM",
+      "logo": "https://www.coinist.io/wp-content/uploads/2017/08/Modum.jpg",
+      "description": ""
+    },
     "coordinates": [47.3821685,8.50317]
   },
   {
     "id": 1,
     "name": "Checkpoint 1",
-    "sponsor": "",
+    "sponsor": {
+      "name": "Amanox",
+      "logo": "https://www.digitaleschweiz.ch/wp-content/uploads/2018/12/amanox_solutions.jpg",
+      "description": ""
+    },
     "coordinates": [47.3675919,8.4948336]
   },
   {
     "id": 2,
     "name": "Checkpoint 2",
-    "sponsor": "",
+    "sponsor": {
+      "name": "AWS",
+      "logo": "https://pbs.twimg.com/profile_images/907648858343256064/V-iyEIpW_400x400.jpg",
+      "description": ""
+    },
     "coordinates": [47.365564, 8.526930]
   },
   {
     "id": 3,
     "name": "Checkpoint 3",
-    "sponsor": "",
+    "sponsor": {
+      "name": "FELFEL",
+      "logo": "https://images.8tracks.com/cover/i/010/099/246/felfel_ag_zurich_felfel_logo-699.jpg",
+      "description": ""
+    },
     "coordinates": [47.371326, 8.536112]
   },
   {
     "id": 4,
     "name": "Checkpoint 4",
-    "sponsor": "",
+    "sponsor": {
+      "name": "SHIFT",
+      "logo": "https://cdn.dribbble.com/users/28033/screenshots/221638/shiftlogo.jpg",
+      "description": ""
+    },
     "coordinates": [47.378797, 8.548288]
   },
   {
     "id": 5,
     "name": "Checkpoint 5",
-    "sponsor": "",
+    "sponsor": {
+      "name": "Trust Square",
+      "logo": "https://pbs.twimg.com/profile_images/976775524143058944/aR-mIrZt_400x400.jpg",
+      "description": ""
+    },
     "coordinates": [47.386657, 8.534532]
   }
 ]

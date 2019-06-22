@@ -14,9 +14,17 @@
     "prettier": "^1.18.2",
     "mongoose": "^5.6.0",
     "@google/maps": "^0.5.5",
-    "spherical-geometry-js": "^1.4.0"
+    "spherical-geometry-js": "^1.4.0",
+    "solc": "0.4.24",
+    "web3": "1.0.0-beta.37"
   },
   "scripts": {
-    "run": "pm2 start runserver.json && pm2 flush && pm2 log axelra-backend"
+    "server": "pm2 start runserver.json && pm2 flush && pm2 log axelra-backend",
+    "deploy": "cross-env node --experimental-modules smartcontracts/deployment/deployment-script.mjs"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "dotenv": "latest",
+    "nodemon": "^1.18.10"
   }
 }

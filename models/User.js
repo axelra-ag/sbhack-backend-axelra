@@ -12,6 +12,10 @@ const schema = new mongoose.Schema({
     type:     String,
     required: true
   },
+  ephiriumID: {
+    type:     String,
+    default:  null
+  },
   challenges: {
     type:     [{ type: Schema.Types.ObjectId, ref: 'Challenge' }],
     default: []

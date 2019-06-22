@@ -5,7 +5,6 @@
       "script": "server.js",
       "cwd": "./",
       "max_memory_restart": "350M",
-      "watch": "./",
       "ignore_watch":       [
         "./node_modules"
       ]

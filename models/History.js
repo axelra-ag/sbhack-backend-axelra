@@ -24,11 +24,9 @@ const schema = new mongoose.Schema({
   },
   user: {
     type:     { type: Schema.Types.ObjectId, ref: 'User' },
-    default: null
   },
   challenge: {
     type:    { type: Schema.Types.ObjectId, ref: 'Challenge' },
-    default: null
   }
 });
 

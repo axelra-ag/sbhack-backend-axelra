@@ -4,76 +4,181 @@
     "name": "Station 0",
     "coordinates": [47.3436811, 8.5242391],
     "availableBikes": 10,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "ZFUYizJT+/GteBnLb"
   },
   {
     "id": 1,
     "name": "Station 1",
     "coordinates": [47.347950, 8.526061],
     "availableBikes": 15,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "c4a5fdnAXaAtzqm33"
   },
   {
     "id": 2,
     "name": "Station 2",
     "coordinates": [47.3750872,8.5177966],
     "availableBikes": 5,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "JmyaQvA624QrW3gsK"
   },
   {
     "id": 3,
     "name": "Station 3",
     "coordinates": [47.3972822,8.3974746],
     "availableBikes": 7,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "4gMYgpVF87hkMYqmJ"
   },
   {
     "id": 4,
     "name": "Station 4",
     "coordinates": [47.4273416,8.553148],
     "availableBikes": 0,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "5Nkysy2cN4cGHpDb8"
   },
   {
     "id": 5,
     "name": "Station 5",
     "coordinates": [47.403289, 8.607952],
     "availableBikes": 34,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "4fWrT3mzB5z6m658X"
   },
   {
     "id": 6,
     "name": "Station 6",
     "coordinates": [47.3793099,8.5593968],
     "availableBikes": 17,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "Bwb6P8zJwSVKtQBba"
   },
   {
     "id": 7,
     "name": "Station 7",
     "coordinates": [47.366528, 8.540304],
     "availableBikes": 13,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "bXsfTMCDknG7aaPyV"
   },
   {
     "id": 8,
     "name": "Station 8",
     "coordinates": [47.334860, 8.526954],
     "availableBikes": 2,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "dA3Fhh2pHUTaC4bg4"
   },
   {
     "id": 9,
     "name": "Trust Square AG",
     "coordinates": [47.367497,8.5398021],
     "availableBikes": 99,
-    "secretKey": "ZFUYizJT+/GteBnLbHq1dT1RTn"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 10,
     "name": "Naglerwiesenstrasse",
     "coordinates": [47.4129885,8.4815776],
     "availableBikes": 1,
+    "secretKey": "3NQUTNtE8dVDjjxbg"
+  },
+  {
+    "id": 11,
+    "name": "Deloitte AG",
+    "coordinates": [47.3644557,8.5335854],
+    "availableBikes": 4,
+    "secretKey": "Vt8FJAqz6HR9gbuzw"
+  },
+  {
+    "id": 12,
+    "name": "Migros Fitnesspark Stockerhof",
+    "coordinates": [47.3653967,8.5341538],
+    "availableBikes": 6,
+    "secretKey": "BLLaY6cQCBKauHd74"
+  },
+  {
+    "id": 13,
+    "name": "Descartes Finance AG",
+    "coordinates": [47.3684523,8.5343024],
+    "availableBikes": 7,
+    "secretKey": "dtHLN8Xjfwwkf69UV"
+  },
+  {
+    "id": 14,
+    "name": "Luxor Fitness",
+    "coordinates": [47.3683362,8.5367521],
+    "availableBikes": 41,
+    "secretKey": "uZrN3YVtEpyKqYvCn"
+  },
+  {
+    "id": 15,
+    "name": "Wüest Partner AG",
+    "coordinates": [47.3687059,8.5377828],
+    "availableBikes": 7,
+    "secretKey": "2ksx6SC7U7Huyc2eg"
+  },
+  {
+    "id": 16,
+    "name": "Panzernashorn",
+    "coordinates": [47.3684239,8.538901],
+    "availableBikes": 2,
+    "secretKey": "xqk57NK2wfhqBzrPX"
+  },
+  {
+    "id": 17,
+    "name": "Metropol",
+    "coordinates": [47.3676114,8.5405709],
+    "availableBikes": 11,
     "secretKey": "ZFUYizJT+/Gte12LbHq1dT1RTn"
+  },
+  {
+    "id": 18,
+    "name": "Laternengasse",
+    "coordinates": [47.3697731,8.5431452],
+    "availableBikes": 13,
+    "secretKey": "XT5UvUQFnJ9VHvufJ"
+  },
+  {
+    "id": 19,
+    "name": "Hecht",
+    "coordinates": [47.368417,8.5442949],
+    "availableBikes": 6,
+    "secretKey": "mG2SrLutGNMDENd4L"
+  },
+  {
+    "id": 20,
+    "name": "Züghuspl",
+    "coordinates": [47.3701657,8.5388556],
+    "availableBikes": 9,
+    "secretKey": "xpDuTKJFPD7zuCU39"
+  },
+  {
+    "id": 21,
+    "name": "Lake station",
+    "coordinates": [47.3663558,8.5412404],
+    "availableBikes": 10,
+    "secretKey": "x7MEhD5VpLCUQRZgG"
+  },
+  {
+    "id": 22,
+    "name": "Münsterhof",
+    "coordinates": [47.370039, 8.540529],
+    "availableBikes": 7,
+    "secretKey": "pKfQ6c44ft9Fassut"
+  },
+  {
+    "id": 23,
+    "name": "Stadthausquai",
+    "coordinates": [47.369454, 8.541806],
+    "availableBikes": 2,
+    "secretKey": "Ut48d3q6pMepaE8Ey"
+  },
+  {
+    "id": 24,
+    "name": "Tiefenhöfe",
+    "coordinates": [47.368457, 8.539081],
+    "availableBikes": 11,
+    "secretKey": "GShJeNy5WWwZeLhJZ"
+  },
+  {
+    "id": 25,
+    "name": "Starbucks",
+    "coordinates": [47.3678931,8.5353509],
+    "availableBikes": 6,
+    "secretKey": "J5Ztnu62AzVJVnPXf"
   }
 ]

@@ -4,7 +4,7 @@ import {mobilityContractSetup} from "./mobility-contract-setup.mjs";
 
 const run = async () => {
   const [mobContact, serviceContract] = await deployContractsAndSaveAddressesAndABIs();
-  await mintTokens(mobContact)
+  await mintTokens(mobContact, serviceContract)
     .then(() =>{
       console.log('The MOB tokens have been minted.');
     });

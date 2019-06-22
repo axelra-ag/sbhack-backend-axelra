@@ -1,4 +1,5 @@
 const mongoose  = require('mongoose');
+const Schema = mongoose.Schema;
 
 const schema = new mongoose.Schema({
   email:    {
@@ -12,11 +13,11 @@ const schema = new mongoose.Schema({
     required: true
   },
   challenges: {
-    type:     [String],
+    type:     [{ type: Schema.Types.ObjectId, ref: 'Challenge' }],
     default: []
   },
   pastChallenges: {
-    type:     [String],
+    type:     [{ type: Schema.Types.ObjectId, ref: 'Challenge' }],
     default: []
   }
 });

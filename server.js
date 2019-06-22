@@ -20,6 +20,8 @@ DB_connection().then(() => {
   app.use("/user", require("./routes/user"));
   app.use("/challenge", require("./routes/challenges"));
 
+  require('./config/challenges');
+
 }).catch(err => {
   console.log(err);
 });

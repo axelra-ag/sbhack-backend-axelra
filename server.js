@@ -5,8 +5,6 @@ const fs = require("fs");
 
 const mongoose = require('mongoose');
 
-const AWS = require("aws-sdk");
-
 const app = express();
 const port = 6000;
 

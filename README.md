@@ -28,6 +28,15 @@ _post_ `/maps/achieve-point`
     checkPoint: 5
 }`
 
+_post_ `/maps/get-distance-between`
+
+`
+{
+    "start": [47.403289, 8.607952],
+    "end": [47.403289, 8.607915]
+}
+`
+
 **user**
 
 _post_ `/user/add`

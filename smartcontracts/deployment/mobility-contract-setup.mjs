@@ -1,6 +1,7 @@
 import web3 from "../../helpers/web3.mjs";
 import {getEthereumNodeAccounts} from "./token-minting.mjs";
 import stations from "../../stations.json"
+import MapController from "../../controllers/MapController"
 import fs from "fs";
 
 export const setTokenContract = async (serviceContract, tokenContractAddress) => {
@@ -38,9 +39,20 @@ export const createStations = async (serviceContract) => {
   );
 };
 
-const getDistanceBetween = (station1, station2) => {
-  // TODO retrieve distance
-  return 5;
+const getDistanceBetween = async (station1, station2) => {
+  try {
+    MapController.getDistanceBetween({start: station1, end: station2}, (err, data) => {
+      if(err) {
+        console.log(err);
+        return false;
+      } else {
+        return data.distance;
+      }
+    });
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
 };
 
 export const mobilityContractSetup = async (serviceContract, tokenContractAddress) => {

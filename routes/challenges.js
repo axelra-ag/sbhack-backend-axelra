@@ -2,7 +2,7 @@ const challengesRouter = require("express").Router(),
       ChallengeModel = require('../models/Challenge'),
       UserModel = require('../models/User');
 
-defaultResponse = (req, res) => {
+const defaultResponse = (req, res) => {
   return function(err, data) {
     if (err) {
       return res.status(500).json({ success: false, message: err });

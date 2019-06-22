@@ -50,7 +50,7 @@ contract BikeToWork {
         
     }
 
-    function createSponsoredCheckpoint (address _from, uint256 _value, uint256 _rewardPerCheckin, uint256 _amountOfRewards, bytes32 _checkpointSecret) {
+    function createSponsoredCheckpoint (address _from, uint256 _value, uint256 _rewardPerCheckin, uint256 _amountOfRewards, bytes32 _checkpointSecret) public {
 
         require(_value == SafeMath.mul(_rewardPerCheckin, _amountOfRewards), "not enough value saved to the contract.");
 

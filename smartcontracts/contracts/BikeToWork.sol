@@ -19,6 +19,7 @@ contract BikeToWork {
         bool roundTripOnSameDay;
         uint256 durationInDays;
         uint256 allowedNumberOfBreakDays;
+        State state;
     }
 
     enum State {
@@ -42,12 +43,39 @@ contract BikeToWork {
         bytes32[] checkIns;
     }
     
-    mapping(uint256 => SponsoredChallenge) public sponsoredChallenges;
-    mapping(uint256 => SponsoredCheckpoint) public sponsoredCheckpoints;
+    mapping(uint256 => SponsoredChallenge) sponsoredChallenges;
+    uint256[] challenges;
+    mapping(uint256 => SponsoredCheckpoint) sponsoredCheckpoints;
     uint256[] checkpoints;
 
-    function createSponsoredChallenge () {
-        
+    function createSponsoredChallenge (
+        address _from,
+        uint256 _value,
+        uint256 _rewardPerDistance,
+//        uint256 _totalSponsoredAmount,
+        uint256 _amountOfRuns,
+        bool _roundTripOnSameDay,
+        uint256 _durationInDays,
+        uint256 _allowedNumberOfBreakDays
+    ) public {
+
+        uint256 id;
+        if (challenges.length == 0)
+            id = 0;
+        else
+            id = sponsoredChallenges[(challenges.length-1)].id + 1;
+
+        SponsoredChallenge storage challenge = sponsoredChallenges[id];
+        challenge.id = id;
+        challenge.totalSponsoredAmount = _value;
+        challenge.rewardPerDistance = _rewardPerDistance;
+        challenge.amountOfRuns = _amountOfRuns;
+        challenge.roundTripOnSameDay = _roundTripOnSameDay;
+        challenge.durationInDays = _durationInDays;
+        challenge.allowedNumberOfBreakDays = _allowedNumberOfBreakDays;
+        challenge.state = State.ACTIVE;
+
+        challenges.push(challenge.id);
     }
 
     function createSponsoredCheckpoint (address _from, uint256 _value, uint256 _rewardPerCheckin, uint256 _amountOfRewards, bytes32 _checkpointSecret) public {
@@ -65,6 +93,7 @@ contract BikeToWork {
         checkpoint.rewardPerCheckin = _rewardPerCheckin;
         checkpoint.amountOfRewards = _amountOfRewards;
         checkpoint.checkpointHash = keccak256(abi.encode(_checkpointSecret));
+        checkpoint.state = State.ACTIVE;
 
         checkpoints.push(checkpoint.id);
     }

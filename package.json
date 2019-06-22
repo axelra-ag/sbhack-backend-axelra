@@ -1,0 +1,17 @@
+{
+  "name": "sbhack-backend-axelra",
+  "version": "0.1.0",
+  "author": "severinwullschleger",
+  "dependencies": {
+    "solc": "0.4.24",
+    "web3": "1.0.0-beta.37"
+  },
+  "scripts": {
+    "deploy": "cross-env node --experimental-modules src/smartcontracts/deployment/deployment-script.mjs"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "dotenv": "latest",
+    "nodemon": "^1.18.10"
+  }
+}

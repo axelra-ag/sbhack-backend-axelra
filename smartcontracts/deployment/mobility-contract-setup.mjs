@@ -59,7 +59,7 @@ const getDistanceBetween = (station1, station2) => {
 export const mobilityContractSetup = async (serviceContract, tokenContractAddress) => {
   await setTokenContract(serviceContract, tokenContractAddress)
     .then((() => console.log("CO2 Contract set.")));
-  await setRewardPerDistance(serviceContract, 100)
+  await setRewardPerDistance(serviceContract, 5)
     .then((() => console.log("The reward per distance set.")));
   await createStations(serviceContract)
     .then((() => console.log("All stations were created.")));

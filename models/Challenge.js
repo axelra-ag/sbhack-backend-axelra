@@ -8,7 +8,7 @@ const schema = new mongoose.Schema({
   status: {
     type:     Boolean,
     required: true,
-    default:  false,
+    default:  true,
   }
 });
 

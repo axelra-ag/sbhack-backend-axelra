@@ -11,30 +11,33 @@ defaultResponse = (req, res) => {
   };
 };
 
-userRouter.post("/add", function(req, res, next) {
-  // const data = req.body;
+userRouter.post("/add", function(req, res) {
+  const data = req.body;
 
-  return UserController.addProfile('1', defaultResponse(req, res));
+  return UserController.addProfile(data, defaultResponse(req, res));
 });
 
-userRouter.post("/edit", function(req, res, next) {
-  // const data = req.body;
+userRouter.post("/edit", function(req, res) {
+  const {userID} = req.body,
+        profile = req.body;
 
-  return UserController.editProfile('1', defaultResponse(req, res));
+  delete profile.userID;
+
+  return UserController.editProfile(userID, profile, defaultResponse(req, res));
 });
 
-userRouter.post("/profile", function(req, res, next) {
-  // const data = req.body;
+userRouter.post("/profile", function(req, res) {
+  const {userID} = req.body;
 
-  return UserController.getUserProfile('1', defaultResponse(req, res));
+  return UserController.getUserProfile(userID, defaultResponse(req, res));
 });
 
 const UserController = {
 
   addProfile: (data, callback) => {
     let user = new UserModel();
-    user.name = 'Mike';
-    user.email = 'test@google.com';
+    user.name = data.name;
+    user.email = data.email;
     user.save(err => {
       if (err) {
         return callback(err);
@@ -50,7 +53,7 @@ const UserController = {
   editProfile: (id, profile, callback) => {
     UserModel.findOneAndUpdate(
       {_id: id},
-      {$set: {profile}},
+      {$set: profile},
       {new: true},
       callback
     );

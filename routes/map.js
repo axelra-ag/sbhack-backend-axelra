@@ -18,11 +18,11 @@ defaultResponse = (req, res) => {
 };
 
 mapRouter.post("/get-directions", function(req, res, next) {
-  // const data = req.body;
-  const data = {
-    start: 'Morgentalstrasse 67 8038 Zürich',
-    end: 'Bahnhofstrasse 3, 8001 Zürich'
-  };
+  const data = req.body;
+  // const data = {
+  //   start: 'Morgentalstrasse 67 8038 Zürich',
+  //   end: 'Bahnhofstrasse 3, 8001 Zürich'
+  // };
 
   return MapController.getDistance(data, defaultResponse(req, res));
 });
@@ -32,9 +32,10 @@ mapRouter.get('/get-stations', function (req, res) {
 });
 
 mapRouter.post("/get-closest-station", function(req, res, next) {
-  // const data = req.body;
+  const {address} = req.body;
+  // const address = 'Morgentalstrasse 67 8038 Zürich';
 
-  return MapController.getStation('Morgentalstrasse 67 8038 Zürich', defaultResponse(req, res));
+  return MapController.getStation(address, defaultResponse(req, res));
 });
 
 const MapController = {

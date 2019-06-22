@@ -19,6 +19,7 @@
     "web3": "1.0.0-beta.37"
   },
   "scripts": {
+    "start": "npm run server",
     "server": "pm2 start runserver.json && pm2 flush && pm2 log axelra-backend",
     "deploy": "cross-env ETH_NETWORK=ganache node --experimental-modules smartcontracts/deployment/deployment-script.mjs"
   },

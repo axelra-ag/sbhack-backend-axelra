@@ -27,7 +27,7 @@ export const createStations = async (serviceContract) => {
 
       const ids = stations.map(e => {return e.id});
       const distances = stations.map(e => {
-        return getDistanceBetween(s, e)
+        return getDistanceBetween(s, e);
       });
 
       return serviceContract.methods.createStation(web3.utils.utf8ToHex(s.secretKey), ids, distances).send({
@@ -39,20 +39,21 @@ export const createStations = async (serviceContract) => {
   );
 };
 
-const getDistanceBetween = async (station1, station2) => {
-  try {
-    MapController.getDistanceBetween({start: station1, end: station2}, (err, data) => {
-      if(err) {
-        console.log(err);
-        return false;
-      } else {
-        return data.distance;
-      }
-    });
-  } catch (e) {
-    console.log(e);
-    return false;
-  }
+const getDistanceBetween = (station1, station2) => {
+  // try {
+  //   MapController.getDistanceBetween({start: station1, end: station2}, (err, data) => {
+  //     if(err) {
+  //       console.log(err);
+  //       return false;
+  //     } else {
+  //       return data.distance;
+  //     }
+  //   });
+  // } catch (e) {
+  //   console.log(e);
+  //   return false;
+  // }
+  return 50;
 };
 
 export const mobilityContractSetup = async (serviceContract, tokenContractAddress) => {

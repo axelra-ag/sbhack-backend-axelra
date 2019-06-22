@@ -21,7 +21,8 @@
   "scripts": {
     "start": "npm run server",
     "server": "pm2 start runserver.json && pm2 flush && pm2 log axelra-backend",
-    "deploy": "cross-env ETH_NETWORK=ganache node --experimental-modules smartcontracts/deployment/deployment-script.mjs"
+    "deploy": "cross-env ETH_NETWORK=ganache node --experimental-modules smartcontracts/deployment/deployment-script.mjs",
+    "dev": "cross-env ETH_NETWORK=ganache nodemon --exec \"node --experimental-modules\" dev-script.mjs"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",

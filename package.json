@@ -19,7 +19,7 @@
     "web3": "1.0.0-beta.37"
   },
   "scripts": {
-    "run": "pm2 start runserver.json && pm2 flush && pm2 log axelra-backend",
+    "server": "pm2 start runserver.json && pm2 flush && pm2 log axelra-backend",
     "deploy": "cross-env node --experimental-modules smartcontracts/deployment/deployment-script.mjs"
   },
   "devDependencies": {

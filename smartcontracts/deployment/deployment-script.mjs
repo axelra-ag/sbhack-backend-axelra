@@ -16,6 +16,9 @@ const run = async () => {
     .then(() => {
       console.log('The minting has been finished.');
     });
+
+  await mobilityContractSetup(serviceContract, mobContact.options.address);
+
   process.exit();
 };
 

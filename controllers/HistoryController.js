@@ -1,6 +1,4 @@
-const HistoryModel = require('../models/History'),
-      UserModel = require('../models/User'),
-      ObjectId = require('mongodb').ObjectID;
+const HistoryModel = require('../models/History');
 
 const HistoryController = {
   add: (data, callback) => {
@@ -10,7 +8,7 @@ const HistoryController = {
     record.reward = data.reward;
     record.distance = data.distance;
     record.date = Date.now();
-    record.user = ObjectId(data.userId);
+    record.user = data.userId;
     record.ephiriumId = data.rideId;
 
     record.save(err => {
@@ -26,14 +24,14 @@ const HistoryController = {
   },
 
   getHistoryByUserID: (userId, callback) => {
-    // HistoryModel.find({user: ObjectId(userId)}).exec((err, data) => {
-    //   if(err) return callback(err);
-    //
-    //   return callback(null, {
-    //     success: true,
-    //     result: data
-    //   })
-    // });
+    HistoryModel.find({user: userId}).exec((err, data) => {
+      if(err) return callback(err);
+
+      return callback(null, {
+        success: true,
+        result: data
+      })
+    });
   }
 };
 

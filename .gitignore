@@ -6,7 +6,5 @@
 # dependencies
 /node_modules
 
-package-lock.json
-
 smartcontracts/deployment
 smartcontracts/constants

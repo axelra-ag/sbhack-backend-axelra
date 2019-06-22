@@ -87,14 +87,14 @@ contract BikeToWork {
         require(rides[_rideId].rider == msg.sender);
         rides[_rideId].endStationId = _endStationId;
         // transfer tokens to user
-        require(mobTokenContract.transfer(msg.sender, distances[rides[_rideId].startStationId][rides[_rideId].endStationId]));
+        require(mobTokenContract.transfer(msg.sender, SafeMath.mul(rewardPerDistance, distances[rides[_rideId].startStationId][rides[_rideId].endStationId])));
     }
 
     function endRide (uint256 _rideId, bytes32 _endStationSecretHash) public {
         require(stations[rides[_rideId].endStationId].secretHash == _endStationSecretHash, "secret is not correct");
         require(rides[_rideId].rider == msg.sender);
         // transfer tokens to user
-        require(mobTokenContract.transfer(msg.sender, distances[rides[_rideId].startStationId][rides[_rideId].endStationId]));
+        require(mobTokenContract.transfer(msg.sender, SafeMath.mul(rewardPerDistance, distances[rides[_rideId].startStationId][rides[_rideId].endStationId])));
     }
 
 

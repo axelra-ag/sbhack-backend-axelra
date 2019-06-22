@@ -1,8 +1,13 @@
 import web3 from '../../helpers/web3.mjs'
 
 
-export const mintTokens = async (tokenContract) => {
+export const mintTokens = async (tokenContract, serviceContract) => {
   const accounts = await getEthereumNodeAccounts(web3);
+
+  // token minting also for service Contract for dev purposes
+  if (serviceContract)
+    accounts.push(serviceContract.options.address);
+
   const  tokenAmounts = accounts.map(() => {
     return 20000000000000
   });

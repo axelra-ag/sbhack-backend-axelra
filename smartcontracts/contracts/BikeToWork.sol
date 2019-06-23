@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 import "./SafeMath.sol";
-import "./MOB.sol";
+import "./CO2.sol";
 
 
 contract BikeToWork {
@@ -9,7 +9,7 @@ contract BikeToWork {
     using SafeMath for uint256;
 
     address public contractOwner;
-    MOB mobTokenContract;
+    CO2 mobTokenContract;
 
     constructor() public {
         contractOwner = msg.sender;
@@ -17,7 +17,7 @@ contract BikeToWork {
 
     function setTokenContract (address contractAddress ) public {
         require(msg.sender == contractOwner, "not allowed");
-        mobTokenContract = MOB(contractAddress);
+        mobTokenContract = CO2(contractAddress);
     }
 
     struct Station {

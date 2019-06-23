@@ -16,8 +16,8 @@ export const smartcontractsAndLibraries = () => {
       )
     },
     contract: {
-      'MOB.sol': fs.readFileSync(
-        path.resolve(DIR_NAME, 'smartcontracts/contracts/MOB.sol'),
+      'CO2.sol': fs.readFileSync(
+        path.resolve(DIR_NAME, 'smartcontracts/contracts/CO2.sol'),
         'utf-8'
       )
       ,

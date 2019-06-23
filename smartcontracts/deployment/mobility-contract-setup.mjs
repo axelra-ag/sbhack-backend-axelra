@@ -1,6 +1,7 @@
 import web3 from "../../helpers/web3.mjs";
 import {getEthereumNodeAccounts} from "./token-minting.mjs";
 import stations from "../../stations.json"
+import checkpoints from "../../checkpoints.json"
 import MapController from "../../controllers/MapController"
 import fs from "fs";
 
@@ -39,6 +40,30 @@ export const createStations = async (serviceContract) => {
   );
 };
 
+export const createSponsoredCheckpoint = async (tokenContract, ) => {
+  const accounts = await getEthereumNodeAccounts(web3);
+  return Promise.all(
+    checkpoints.map(c => {
+
+      let input = web3.eth.abi.encodeParameters(
+        ['uint256', 'uint256', 'bytes32'],
+        [2, 25, web3.utils.utf8ToHex(c.secretKey)]
+      );
+
+      return tokenContract.methods.transferAndCall(
+        accounts[0],
+        200000,
+        '0x9c9ea337',
+        input
+      ).send({
+        from: accounts[0],
+        gas: 80000000
+      })
+        .then(() => console.log("checkpoint created."));
+    })
+  );
+};
+
 const getDistanceBetween = (station1, station2) => {
   // try {
   //   MapController.getDistanceBetween({start: station1, end: station2}, (err, data) => {
@@ -59,7 +84,7 @@ const getDistanceBetween = (station1, station2) => {
 export const mobilityContractSetup = async (serviceContract, tokenContractAddress) => {
   await setTokenContract(serviceContract, tokenContractAddress)
     .then((() => console.log("CO2 Contract set.")));
-  await setRewardPerDistance(serviceContract, 100)
+  await setRewardPerDistance(serviceContract, 5)
     .then((() => console.log("The reward per distance set.")));
   await createStations(serviceContract)
     .then((() => console.log("All stations were created.")));

@@ -19,6 +19,7 @@ DB_connection().then(() => {
   app.use("/maps", require("./routes/map"));
   app.use("/user", require("./routes/user"));
   app.use("/challenge", require("./routes/challenges"));
+  app.use("/history", require("./routes/history"));
 
   require('./config/challenges');
 

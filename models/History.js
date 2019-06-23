@@ -23,12 +23,10 @@ const schema = new mongoose.Schema({
     default: Date.now(),
   },
   user: {
-    type:     { type: Schema.Types.ObjectId, ref: 'User' },
-    default: null
+    type: Schema.Types.ObjectId, ref: 'User',
   },
   challenge: {
-    type:    { type: Schema.Types.ObjectId, ref: 'Challenge' },
-    default: null
+    type: Schema.Types.ObjectId, ref: 'Challenge',
   }
 });
 

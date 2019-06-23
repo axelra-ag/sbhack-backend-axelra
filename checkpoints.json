@@ -7,7 +7,8 @@
       "logo": "https://www.coinist.io/wp-content/uploads/2017/08/Modum.jpg",
       "description": ""
     },
-    "coordinates": [47.3821685,8.50317]
+    "coordinates": [47.3821685,8.50317],
+    "secretKey": "JmyaQvA624QrW3gsK"
   },
   {
     "id": 1,
@@ -17,7 +18,8 @@
       "logo": "https://www.digitaleschweiz.ch/wp-content/uploads/2018/12/amanox_solutions.jpg",
       "description": ""
     },
-    "coordinates": [47.3675919,8.4948336]
+    "coordinates": [47.3675919,8.4948336],
+    "secretKey": "JmyaQvA624QrW3gsK"
   },
   {
     "id": 2,
@@ -27,7 +29,8 @@
       "logo": "https://pbs.twimg.com/profile_images/907648858343256064/V-iyEIpW_400x400.jpg",
       "description": ""
     },
-    "coordinates": [47.365564, 8.526930]
+    "coordinates": [47.365564, 8.526930],
+    "secretKey": "JmyaQvA624QrW3gsK"
   },
   {
     "id": 3,
@@ -37,7 +40,8 @@
       "logo": "https://images.8tracks.com/cover/i/010/099/246/felfel_ag_zurich_felfel_logo-699.jpg",
       "description": ""
     },
-    "coordinates": [47.371326, 8.536112]
+    "coordinates": [47.371326, 8.536112],
+    "secretKey": "JmyaQvA624QrW3gsK"
   },
   {
     "id": 4,
@@ -47,7 +51,8 @@
       "logo": "https://cdn.dribbble.com/users/28033/screenshots/221638/shiftlogo.jpg",
       "description": ""
     },
-    "coordinates": [47.378797, 8.548288]
+    "coordinates": [47.378797, 8.548288],
+    "secretKey": "JmyaQvA624QrW3gsK"
   },
   {
     "id": 5,
@@ -57,6 +62,7 @@
       "logo": "https://pbs.twimg.com/profile_images/976775524143058944/aR-mIrZt_400x400.jpg",
       "description": ""
     },
-    "coordinates": [47.386657, 8.534532]
+    "coordinates": [47.386657, 8.534532],
+    "secretKey": "JmyaQvA624QrW3gsK"
   }
 ]

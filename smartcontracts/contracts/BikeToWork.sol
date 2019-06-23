@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 import "./SafeMath.sol";
-import "./MOB.sol";
+import "./CO2.sol";
 
 
 contract BikeToWork {
@@ -9,7 +9,7 @@ contract BikeToWork {
     using SafeMath for uint256;
 
     address public contractOwner;
-    MOB mobTokenContract;
+    CO2 mobTokenContract;
 
     constructor() public {
         contractOwner = msg.sender;
@@ -17,7 +17,7 @@ contract BikeToWork {
 
     function setTokenContract (address contractAddress ) public {
         require(msg.sender == contractOwner, "not allowed");
-        mobTokenContract = MOB(contractAddress);
+        mobTokenContract = CO2(contractAddress);
     }
 
     struct Station {
@@ -150,7 +150,7 @@ contract BikeToWork {
         checkpoint.id = id;
         checkpoint.rewardPerCheckin = _rewardPerCheckin;
         checkpoint.amountOfRewards = _amountOfRewards;
-        checkpoint.checkpointHash = keccak256(abi.encode(_checkpointSecret));
+        checkpoint.checkpointHash = _checkpointSecret;
         checkpoint.state = State.ACTIVE;
 
         checkpoints.push(checkpoint.id);

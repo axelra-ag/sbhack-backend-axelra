@@ -55,6 +55,26 @@ const MapController = {
     }
   },
 
+  checkDistanceToStation: async (coordinates, callback) => {
+    let closestStation = await find_closest_marker(coordinates);
+
+    let farAway = await googleGeometry.computeDistanceBetween(
+        googleGeometry.convertLatLng(closestStation.coordinates),
+        googleGeometry.convertLatLng([parseFloat(coordinates.lat), parseFloat(coordinates.lng)])
+    );
+
+    if(parseInt(farAway) <= 20) {
+      return callback(null, {
+        success: true,
+        data: {
+          hash: closestStation.secretKey
+        }
+      })
+    } else {
+      return callback('You are far away to the check point. Please come closer.')
+    }
+  },
+
   getCheckpoints: async (callback) => {
     if(Checkpoints) {
       return callback(null, {
@@ -66,7 +86,7 @@ const MapController = {
     return  callback('No stations');
   },
 
-  checkDistanseToCheckpoint: async (coordinates, checkpointID, callback) => {
+  checkDistanceToCheckpoint: async (coordinates, checkpointID, callback) => {
     const checkpoint = Checkpoints.find(x => x.id == checkpointID);
     let farAway = await googleGeometry.computeDistanceBetween(
         googleGeometry.convertLatLng(checkpoint.coordinates),

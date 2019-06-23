@@ -5,7 +5,7 @@
 The velove backend includes the following:
 
 - in ``smartcontracts/contracts`` the smart contracts are saved. It includes two libraries (Utils and SafeMath), an ERC-20 / -865 / -677ish token contract (``CO2.sol``) and the service contract which handles the reward distribution when someone is successfully registering the end of a ride.
-- the ``smartcontracts/deployment`` folder includes the deployment scripts and some initialing methods to set the contracts to a usable state for testing and development.
+- the ``smartcontracts/deployment`` folder includes the deployment scripts and some initialing methods to set the contracts to a usable state for testing and development. For example the tokens are minted and some velove stations are already saved to the smart contract.
 - the other folders include routes and the model of the backend which is used as a so called "convenience layer" which eases the use of the blockchain and tracks the smart contract changes.
 ---------------------------------------
 

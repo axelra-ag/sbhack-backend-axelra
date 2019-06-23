@@ -32,6 +32,30 @@ const run = async () => {
 
   await getTokenBalance(tokenContract, accounts[1], accounts[1])
     .then(res => console.log(res));
+
+
+  await web3.eth.getBalance(accounts[1]).then((res) => console.log(res)) ;
+
+  await web3.eth.sendTransaction({
+    from: accounts[0],
+    to: accounts[1],
+    value: '1000000000000000'
+  })
+    .on("transactionHash", tx => console.log(tx))
+    .on("receipt", receipt => {
+      console.log(receipt);
+    })
+    .on("confirmation", (c, r) => {
+      console.log(c, r);
+    })
+    .on("error", e => {
+      console.log(e);
+    })
+    .catch(e => {
+      throw new Error(e);
+    });
+
+  await web3.eth.getBalance(accounts[1]).then((res) => console.log("tes", res)) ;
 };
 
 run();

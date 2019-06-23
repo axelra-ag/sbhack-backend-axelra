@@ -56,11 +56,11 @@ contract ERC865Plus677ish {
         uint256 _fee, uint256 _nonce, bytes4 _methodName, bytes memory _args) public returns (bool);
 }
 
-contract MOB is ERC20, ERC865Plus677ish {
+contract CO2 is ERC20, ERC865Plus677ish {
     using SafeMath for uint256;
 
-    string public constant name = "MOB Token";
-    string public constant symbol = "MOB";
+    string public constant name = "CO2 Token";
+    string public constant symbol = "CO2";
     uint8 public constant decimals = 18;
 
     mapping(address => uint256) balances;

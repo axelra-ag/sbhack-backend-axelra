@@ -1,7 +1,47 @@
-# sbhack-backend-axelra
+# SBHACK19 - Team Axelra
 
-**Routes**
+## velove - cycle and earn CO2 coins !
 
+The velove backend includes the following:
+
+- in ``smartcontracts/contracts`` the smart contracts are saved. It includes two libraries (Utils and SafeMath), an ERC-20 / -865 / -677ish token contract (``CO2.sol``) and the service contract which handles the reward distribution when someone is successfully registering the end of a ride.
+- the ``smartcontracts/deployment`` folder includes the deployment scripts and some initialing methods to set the contracts to a usable state for testing and development.
+- the other folders include routes and the model of the backend which is used as a so called "convenience layer" which eases the use of the blockchain and tracks the smart contract changes.
+---------------------------------------
+
+###Deploy smart contracts to Ganache Ethereum network:
+
+Install dependencies:
+```
+npm install
+```
+
+Start Ganache on your local WIFI network:
+```
+ganache-cli -b 3 -h <NETWORK_ADAPTER_IP> -l 20000000000
+```
+
+Set Ganache host and port in environment variable ``RPC_SERVER``.
+```
+RPC_SERVER=<NETWORK_ADAPTER_IP>:7545
+```
+
+Deploy to Ganache:
+```
+npm run deploy
+```
+
+####Run backend locally
+```
+npm run server
+```
+
+
+---------
+
+#### Backup
+
+#####Backend Endpoints
 **maps**
 
 _post_ `/maps/get-directions`

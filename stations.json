@@ -4,56 +4,63 @@
     "name": "Station 0",
     "coordinates": [47.3436811, 8.5242391],
     "availableBikes": 10,
-    "secretKey": "ZFUYizJT+/GteBnLb"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 1,
     "name": "Station 1",
     "coordinates": [47.347950, 8.526061],
     "availableBikes": 15,
-    "secretKey": "c4a5fdnAXaAtzqm33"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 2,
     "name": "Station 2",
     "coordinates": [47.3750872,8.5177966],
     "availableBikes": 5,
-    "secretKey": "JmyaQvA624QrW3gsK"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 3,
     "name": "Station 3",
     "coordinates": [47.3972822,8.3974746],
     "availableBikes": 7,
-    "secretKey": "4gMYgpVF87hkMYqmJ"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 4,
     "name": "Station 4",
     "coordinates": [47.4273416,8.553148],
     "availableBikes": 0,
-    "secretKey": "5Nkysy2cN4cGHpDb8"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 5,
     "name": "Station 5",
     "coordinates": [47.403289, 8.607952],
     "availableBikes": 34,
-    "secretKey": "4fWrT3mzB5z6m658X"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 6,
     "name": "Station 6",
     "coordinates": [47.3793099,8.5593968],
     "availableBikes": 17,
-    "secretKey": "Bwb6P8zJwSVKtQBba"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
+  },
+  {
+    "id": 7,
+    "name": "Station 7",
+    "coordinates": [47.366528, 8.540304],
+    "availableBikes": 13,
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 8,
-    "name": "Wüest Partner AG",
+    "name": "Station 8",
     "coordinates": [47.334860, 8.526954],
     "availableBikes": 2,
-    "secretKey": "dA3Fhh2pHUTaC4bg4"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   },
   {
     "id": 9,
@@ -67,83 +74,6 @@
     "name": "Naglerwiesenstrasse",
     "coordinates": [47.4129885,8.4815776],
     "availableBikes": 1,
-    "secretKey": "3NQUTNtE8dVDjjxbg"
-  },
-  {
-    "id": 11,
-    "name": "Deloitte AG",
-    "coordinates": [47.3644557,8.5335854],
-    "availableBikes": 4,
-    "secretKey": "Vt8FJAqz6HR9gbuzw"
-  },
-  {
-    "id": 13,
-    "name": "Descartes Finance AG",
-    "coordinates": [47.3684523,8.5343024],
-    "availableBikes": 7,
-    "secretKey": "dtHLN8Xjfwwkf69UV"
-  },
-  {
-    "id": 14,
-    "name": "Luxor Fitness",
-    "coordinates": [47.361270, 8.517356],
-    "availableBikes": 41,
-    "secretKey": "uZrN3YVtEpyKqYvCn"
-  },
-  {
-    "id": 18,
-    "name": "Laternengasse",
-    "coordinates": [47.376211, 8.543497],
-    "availableBikes": 13,
-    "secretKey": "XT5UvUQFnJ9VHvufJ"
-  },
-  {
-    "id": 19,
-    "name": "Hecht",
-    "coordinates": [47.368417,8.5442949],
-    "availableBikes": 6,
-    "secretKey": "mG2SrLutGNMDENd4L"
-  },
-  {
-    "id": 20,
-    "name": "Züghuspl",
-    "coordinates": [47.3701657,8.5388556],
-    "availableBikes": 9,
-    "secretKey": "xpDuTKJFPD7zuCU39"
-  },
-  {
-    "id": 21,
-    "name": "Lake station",
-    "coordinates": [47.3663558,8.5412404],
-    "availableBikes": 10,
-    "secretKey": "x7MEhD5VpLCUQRZgG"
-  },
-  {
-    "id": 22,
-    "name": "Münsterhof",
-    "coordinates": [47.358684, 8.553687],
-    "availableBikes": 7,
-    "secretKey": "pKfQ6c44ft9Fassut"
-  },
-  {
-    "id": 23,
-    "name": "California House",
-    "coordinates": [47.364449,8.5601379],
-    "availableBikes": 16,
-    "secretKey": "CULUqMy5KBkf78tnm"
-  },
-  {
-    "id": 24,
-    "name": "Hallenbad",
-    "coordinates": [47.3728555,8.5600658],
-    "availableBikes": 7,
-    "secretKey": "8TLPUmngw57Z5ZYRS"
-  },
-  {
-    "id": 25,
-    "name": "Yalla",
-    "coordinates": [47.3698354,8.518173],
-    "availableBikes": 16,
-    "secretKey": "xYbNRs5FuZVFd8Mnu"
+    "secretKey": "C3gtjvMVUmfMbbFDq"
   }
 ]

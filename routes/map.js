@@ -24,6 +24,12 @@ mapRouter.post("/get-closest-station", (req, res) => {
   return MapController.getStation(address, routeHelper.defaultResponse(req, res));
 });
 
+mapRouter.post("/get-closest-station-coord", (req, res) => {
+  const {coordinates} = req.body;
+
+  return MapController.checkDistanceToStation(coordinates, routeHelper.defaultResponse(req, res));
+});
+
 mapRouter.get('/get-checkpoints', (req, res) => {
   return MapController.getCheckpoints(routeHelper.defaultResponse(req, res));
 });
@@ -31,7 +37,7 @@ mapRouter.get('/get-checkpoints', (req, res) => {
 mapRouter.post('/achieve-point', (req, res) => {
   const {coordinates, checkPoint} = req.body;
 
-  return MapController.checkDistanseToCheckpoint(coordinates, checkPoint, routeHelper.defaultResponse(req, res));
+  return MapController.checkDistanceToCheckpoint(coordinates, checkPoint, routeHelper.defaultResponse(req, res));
 });
 
 module.exports = mapRouter;

@@ -12,7 +12,7 @@ const getWeb3 = () => {
 const getBackendProvider = () => {
 
   if (process.env.ETH_NETWORK === 'ganache') {
-    web3Provider = new Web3.providers.WebsocketProvider('ws://127.0.0.1:7545');
+    web3Provider = new Web3.providers.WebsocketProvider('ws://172.20.10.2:8545');
   }
   else if (process.env.ETH_NETWORK === 'kovan') {
     web3Provider = new Web3.providers.WebsocketProvider('wss://kovan.infura.io/ws/v3/344e9e84c0804cd5a15f4dd4b9b49a1e');

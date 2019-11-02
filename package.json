@@ -12,7 +12,7 @@
     "morgan": "^1.9.1",
     "path": "^0.12.7",
     "prettier": "^1.18.2",
-    "mongoose": "^5.6.0",
+    "mongoose": "^5.7.5",
     "@google/maps": "^0.5.5",
     "spherical-geometry-js": "^1.4.0",
     "solc": "0.4.24",
